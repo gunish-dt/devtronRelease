@@ -4,4 +4,4 @@ metadata:
   name: installer-devtron
   namespace: devtroncd
 spec:
-  url: $RAW_GIT_REPO$NEXT_RELEASE_VERSION/manifests/installation-script
+  url: https://raw.githubusercontent.com/gunish-dt/devtronRelease/v0.4.1/manifests/installation-script
