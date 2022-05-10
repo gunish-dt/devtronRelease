@@ -45,6 +45,7 @@ spec:
   failedJobsHistoryLimit: {{ $.Values.cronjobConfigs.failedJobsHistoryLimit }}
   jobTemplate:
     spec:
+      parallelism: {{ $.Values.cronjobConfigs.parallelism }}
       template:
         metadata:
         {{- if .Values.podAnnotations }}
