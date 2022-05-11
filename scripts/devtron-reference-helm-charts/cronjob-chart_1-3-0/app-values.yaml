@@ -17,6 +17,7 @@ cronjobConfigs:
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1
   restartPolicy: OnFailure
+  parallelism: 1
 
 MinReadySeconds: 60
 GracePeriod: 30
