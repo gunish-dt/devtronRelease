@@ -8,5 +8,5 @@ jobs:
     - name: helm-check
       uses: igabaydulin/helm-check-action@0.1.4
       env:
-        CHART_LOCATION: ./cronjob-chart_1-3-0
-        CHART_VALUES: ./cronjob-chart_1-3-0/app-values.yaml
+        CHART_LOCATION: ./scripts/devtron-reference-helm-charts/cronjob-chart_1-3-0
+        CHART_VALUES: ./scripts/devtron-reference-helm-charts/cronjob-chart_1-3-0/app-values.yaml
