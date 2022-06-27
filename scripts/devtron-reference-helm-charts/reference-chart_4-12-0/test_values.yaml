@@ -137,11 +137,11 @@ ReadinessProbe:
   initialDelaySeconds: 20
   periodSeconds: 10
   successThreshold: 1
-  timeoutSeconds: 5
+  timeoutSeconds: 7
   failureThreshold: 3
   httpHeaders:
     - name: Custom-Header
-      value: abc
+      value: gunish
 
 prometheus:
   release: monitoring
