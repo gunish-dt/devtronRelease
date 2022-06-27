@@ -9,4 +9,4 @@ jobs:
       uses: gunish-dt/helm-kubeval-action@master
       with:
         path: 'scripts/devtron-reference-helm-charts'
-        config: 'config_repos'
+        #config: 'config_repos'
