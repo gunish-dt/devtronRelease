@@ -1,0 +1,29 @@
+on: pull_request
+name: Main
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: |
+          charts:
+            - added|modified: 'scripts/devtron-reference-helm-charts/**'
+          values:
+            - added|modified: 'scripts/devtron-reference-helm-charts/**test_values.yaml'
+          
+
+    # run only if 'charts' files were changed
+  chart-check:
+    needs: tests
+    if: ${{ needs.tests.outputs.charts == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: helm-check
+      uses: gunish-dt/helm-check-action@0.1.4
+      env:
+        CHART_LOCATION: ./scripts/devtron-reference-helm-charts/${{ steps.filter.outputs.charts_files }}
+        CHART_VALUES: ./scripts/devtron-reference-helm-charts/${{ steps.filter.outputs.values_files }}
