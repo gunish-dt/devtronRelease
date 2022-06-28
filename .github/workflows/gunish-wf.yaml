@@ -12,7 +12,7 @@ jobs:
           charts:
             - added|modified: 'scripts/devtron-reference-helm-charts/**'
           values:
-            - added|modified: 'scripts/devtron-reference-helm-charts/**test_values.yaml'
+            - added|modified: 'scripts/devtron-reference-helm-charts/*/test_values.yaml'
           
 
     # run only if 'charts' files were changed
