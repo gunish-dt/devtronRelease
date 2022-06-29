@@ -3,6 +3,9 @@ name: Main
 jobs:
   tests:
     runs-on: ubuntu-latest
+    outputs:
+      charts: ${{ steps.filter.outputs.charts }}
+      values: ${{ steps.filter.outputs.values }}
     steps:
     - uses: actions/checkout@v2
     - uses: dorny/paths-filter@v2
