@@ -6,6 +6,8 @@ jobs:
     outputs:
       charts: ${{ steps.filter.outputs.charts }}
       values: ${{ steps.filter.outputs.values }}
+      chart_f: ${{ steps.filter.outputs.charts_files }}
+      values_f: ${{ steps.filter.outputs.values_files }}
     steps:
     - uses: actions/checkout@v2
     - uses: dorny/paths-filter@v2
@@ -26,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - run: echo ${{ needs.tests.steps.filter.outputs.charts_files }}
+    - run: echo ${{ needs.tests.outputs.charts_f }}
     - name: helm-check
       uses: gunish-dt/helm-check-action@0.1.4
       env:
