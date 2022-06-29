@@ -16,7 +16,7 @@ jobs:
         list-files: shell
         filters: |
           charts:
-            - added|modified: 'scripts/devtron-reference-helm-charts/*'
+            - added|modified: 'scripts/devtron-reference-helm-charts/'
           values:
             - added|modified: 'scripts/devtron-reference-helm-charts/*/test_values.yaml'
     - uses: actions/checkout@master
