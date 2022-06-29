@@ -29,5 +29,5 @@ jobs:
     - name: helm-check
       uses: gunish-dt/helm-check-action@0.1.4
       env:
-        CHART_LOCATION: ./scripts/devtron-reference-helm-charts/${{ needs.tests.outputs.charts_files }}
-        CHART_VALUES: ./scripts/devtron-reference-helm-charts/${{ needs.tests.outputs.values_files }}
+        CHART_LOCATION: ${{ needs.tests.outputs.charts_files }}
+        CHART_VALUES: ${{ needs.tests.outputs.values_files }}
