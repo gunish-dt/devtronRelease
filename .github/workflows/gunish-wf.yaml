@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - run: echo ${{ needs.tests.outputs.charts_files }} ${{needs.tests.outputs.values_files}}
+    - run: echo ${{ needs.tests.steps.filter.outputs.charts_files }} ${{needs.tests.steps.filter.outputs.values_files}}
     - name: helm-check
       uses: gunish-dt/helm-check-action@0.1.4
       env:
