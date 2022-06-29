@@ -19,7 +19,6 @@ jobs:
             - added|modified: 'scripts/devtron-reference-helm-charts/**'
           values:
             - added|modified: 'scripts/devtron-reference-helm-charts/*/test_values.yaml'
-    - run: echo $values_f
     - run: echo ${{ values_f }}
 
     # run only if 'charts' files were changed
