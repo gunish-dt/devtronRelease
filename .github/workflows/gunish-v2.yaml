@@ -20,7 +20,7 @@ jobs:
           values:
             - added|modified: 'scripts/devtron-reference-helm-charts/*/test_values.yaml'
     - uses: actions/checkout@master
-    - run: echo ${{ steps.filter.outputs.values_files }}
+    - run: echo ${{ steps.filter.outputs.charts_files }}
     - name: helm-check
       uses: gunish-dt/helm-check-action@0.1.4
       env:
