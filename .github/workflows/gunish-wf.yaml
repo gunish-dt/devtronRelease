@@ -31,3 +31,4 @@ jobs:
       env:
         CHART_LOCATION: ./${{ needs.tests.steps.filter.outputs.charts_files }}
         CHART_VALUES: ./${{ needs.tests.steps.filter.outputs.values_files }}
+    - run: echo ${{ needs.tests.outputs.charts_files }} ${{needs.tests.outputs.values_files}}
