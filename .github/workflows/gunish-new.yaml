@@ -13,4 +13,4 @@ jobs:
       - name: Validate
         uses: nlamirault/helm-kubeconform-action@v0.1.0
         with:
-          charts: ./charts
+          charts: ./scripts/devtron-reference-helm-charts
