@@ -21,6 +21,13 @@ jobs:
             - added|modified: 'scripts/devtron-reference-helm-charts/*/test_values.yaml'
     - uses: actions/checkout@master
     - run: echo ${{ steps.filter.outputs.values_files }} echo ${{ steps.filter.outputs.charts_files }}
+    - uses: actions/setup-python@v2
+    - uses: jannekem/run-python-script-action@v1
+      with:
+        script: |
+            string=${{ steps.filter.outputs.charts_files }}
+            url=print(string.split("templates",1)[0])
+            return url 
     - name: helm-check
       uses: gunish-dt/helm-check-action@0.1.4
       env:
