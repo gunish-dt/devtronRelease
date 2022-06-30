@@ -13,7 +13,7 @@ jobs:
     - uses: dorny/paths-filter@v2
       id: filter
       with:
-        #list-files: shell
+        list-files: shell
         filters: |
           charts:
             - added|modified: 'scripts/devtron-reference-helm-charts/'
