@@ -28,6 +28,11 @@ jobs:
             string=${{ steps.filter.outputs.charts_files }}
             url=string.split("templates",1)[0]
             return url 
+    - name: Print errors
+      if: steps.script.outputs.error == 'true'
+      run: |
+        printenv "SCRIPT_STDOUT"
+        printenv "SCRIPT_STDERR"
     - name: helm-check
       uses: gunish-dt/helm-check-action@0.1.4
       env:
