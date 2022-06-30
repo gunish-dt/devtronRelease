@@ -26,8 +26,8 @@ jobs:
       with:
         script: |
             string=${{ steps.filter.outputs.charts_files }}
-            url=string.split("templates",1)[0]
-            return url 
+            print=(string.split("templates",1)[0])
+             
     - name: Print errors
       if: steps.script.outputs.error == 'true'
       run: |
