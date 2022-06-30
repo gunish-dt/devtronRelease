@@ -13,10 +13,10 @@ jobs:
     - uses: dorny/paths-filter@v2
       id: filter
       with:
-        #list-files: shell
+        list-files: shell
         filters: |
           charts:
-            - added|modified: 'scripts/devtron-reference-helm-charts/'
+            - added|modified: 'scripts/devtron-reference-helm-charts/**'
           values:
             - added|modified: 'scripts/devtron-reference-helm-charts/*/test_values.yaml'
     - uses: actions/checkout@master
