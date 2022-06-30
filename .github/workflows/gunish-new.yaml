@@ -2,7 +2,7 @@
 on: pull_request
 name: Main
 jobs:
-  gunish:
+  gunish2:
     runs-on: ubuntu-latest
     outputs:
       charts: ${{ steps.filter.outputs.charts }}
