@@ -4,7 +4,7 @@ metadata:
   name: {{ template ".servicename" . }}
   labels:
     app: {{ template ".Chart.Name .name" . }}
-    appId: {{ $.Values.| quote }}
+    appId: {{ $.Values.app | quote }}
     envId: {{ $.Values.env | quote }}
     chart: {{ template ".Chart.Name .chart" . }}
     release: {{ .Release.Name }}
