@@ -25,7 +25,7 @@ jobs:
       with:
         script: |
             print("hello")
-            string=${{ steps.filter.outputs.charts_files }}
+            string='${{ steps.filter.outputs.charts_files }}'
             print(string.split("templates",1)[0])
     - name: Print errors
       if: steps.script.outputs.error == 'true'
