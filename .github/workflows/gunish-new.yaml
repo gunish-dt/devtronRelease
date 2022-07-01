@@ -32,7 +32,7 @@ jobs:
             location=string.split("templates",1)[0]
             print(location)
             set_output("chart_path","location")
-    - run: echo ${{ steps.outputs.chart_l }}
+    - run: echo ${{ steps.python.outputs.chart_path }}
     - name: Print errors
       if: steps.script.outputs.error == 'true'
       run: |
