@@ -41,5 +41,5 @@ jobs:
     - name: helm-check
       uses: gunish-dt/helm-check-action@0.1.4
       env:
-        CHART_LOCATION: ./scripts/devtron-reference-helm-charts/reference-chart_4-12-0/
-        CHART_VALUES: ./scripts/devtron-reference-helm-charts/reference-chart_4-12-0/test_values.yaml
+        CHART_LOCATION: ./${{ steps.python.outputs.chart_path }}
+        CHART_VALUES: ./${{ steps.filter.outputs.values_files }}
