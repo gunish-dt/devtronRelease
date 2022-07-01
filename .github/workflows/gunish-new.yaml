@@ -8,7 +8,7 @@ jobs:
       values: ${{ steps.filter.outputs.values }}
       chart_f: ${{ steps.filter.outputs.charts_files }}
       values_f: ${{ steps.filter.outputs.values_files }}
-      chart_l: ${{ steps.python.outputs.location }}
+      chart_l: ${{ steps.python.outputs.chart_path }}
     steps:
     - uses: actions/checkout@v2
     - uses: dorny/paths-filter@v2
