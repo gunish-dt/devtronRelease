@@ -8,6 +8,7 @@ jobs:
       values: ${{ steps.filter.outputs.values }}
       chart_f: ${{ steps.filter.outputs.charts_files }}
       values_f: ${{ steps.filter.outputs.values_files }}
+      chart_l: ${{ steps.python.outputs.location }}
     steps:
     - uses: actions/checkout@v2
     - uses: dorny/paths-filter@v2
@@ -22,6 +23,7 @@ jobs:
     - run: echo ${{ steps.filter.outputs.values_files }} echo ${{ steps.filter.outputs.charts_files }}
     - uses: actions/setup-python@v2
     - uses: jannekem/run-python-script-action@v1
+      id: python
       with:
         script: |
             print("hello")
@@ -30,6 +32,7 @@ jobs:
             location=string.split("templates",1)[0]
             print(location)
             set_output("chart_path","location")
+    - run: echo ${{ steps.outputs.chart_l }}
     - name: Print errors
       if: steps.script.outputs.error == 'true'
       run: |
