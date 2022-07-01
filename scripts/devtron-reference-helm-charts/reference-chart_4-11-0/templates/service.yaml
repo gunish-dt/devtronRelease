@@ -32,7 +32,7 @@ spec:
       name: {{ .name }}
     {{- end }}
       {{- if $.Values.appMetrics }}
-    - port: 9901
+    - port: 9905
       name: envoy-admin
       {{- end }}
   selector:
