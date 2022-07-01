@@ -27,6 +27,9 @@ jobs:
             print("hello")
             string='${{ steps.filter.outputs.charts_files }}'
             print(string.split("templates",1)[0])
+            location=string.split("templates",1)[0]
+            print(location)
+            set_output(chart_path,location)
     - name: Print errors
       if: steps.script.outputs.error == 'true'
       run: |
@@ -35,5 +38,5 @@ jobs:
     - name: helm-check
       uses: gunish-dt/helm-check-action@0.1.4
       env:
-        CHART_LOCATION: ./${{ steps.filter.outputs.charts_files }}
-        CHART_VALUES: ./${{ steps.filter.outputs.values_files }}
+        CHART_LOCATION: ./scripts/devtron-reference-helm-charts/reference-chart_4-12-0/
+        CHART_VALUES: ./scripts/devtron-reference-helm-charts/reference-chart_4-12-0/test_values.yaml
